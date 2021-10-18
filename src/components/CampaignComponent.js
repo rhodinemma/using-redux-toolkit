@@ -14,21 +14,21 @@ const CampaignComponent = () => {
           {Object.keys(campaign).length === 0 ? (
             <div>...Loading</div>
           ) : (
-            <div class="row" key={_id}>
-              <div class="col-md-10 col-12 mx-auto">
-                <section class="section my-4">
-                  <div class="container text-center">
+            <div className="row" key={_id}>
+              <div className="col-md-10 col-12 mx-auto">
+                <section className="section my-4">
+                  <div className="container text-center">
                     <section>
-                      <div class="row">
-                        <div class="col-lg-4 mb-3">
-                          <div class="card h-100 shadow card-img-top">
-                            <div class="card-body">
+                      <div className="row">
+                        <div className="col-lg-4 mb-3">
+                          <div className="card h-100 shadow card-img-top">
+                            <div className="card-body">
                               <img
                                 src={Banner}
                                 alt={title}
                                 style={{ height: "300px", width: "390px" }}
                               />
-                              <h5 class="display-5">
+                              <h5 className="display-5">
                                 <b>{title}</b>
                               </h5>
                               <br />
@@ -38,14 +38,14 @@ const CampaignComponent = () => {
                               <br />
                               <h5>{story}</h5>
                               <br />
-                              <h5 class="display-6">
+                              <h5 className="display-6">
                                 {" "}
                                 <b>
                                   UGX {amount} <small>goal</small>
                                 </b>
                               </h5>
                               <Link
-                                class="btn btn-warning btn-lg btn-block"
+                                className="btn btn-warning btn-lg btn-block"
                                 to={`/campaigns/${_id}`}
                                 role="button"
                               >

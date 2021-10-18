@@ -1,19 +1,17 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCampaignAsync } from "../redux/campaignSlice";
-import Banner from "../assets/images/hero.jpg";
+import { selectCampaign } from "../redux/campaignSlice";
 
 const CampaignDetail = () => {
   const detail = useSelector((state) => state.campaigns);
-  const { title, amount, category, story } = detail;
+  const { title, amount, category, story, image } = detail;
   const { campaignId } = useParams();
-  console.log(detail);
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (campaignId && campaignId !== "") {
-      dispatch(selectCampaignAsync(campaignId));
+      dispatch(selectCampaign(campaignId));
     }
   }, [dispatch, campaignId]);
 
@@ -23,21 +21,21 @@ const CampaignDetail = () => {
         {Object.keys(detail).length === 0 ? (
           <div>...Loading</div>
         ) : (
-          <div class="row">
-            <div class="col-md-10 col-12 mx-auto">
-              <section class="section my-4">
-                <div class="container text-center">
+          <div className="row">
+            <div className="col-md-10 col-12 mx-auto">
+              <section className="section my-4">
+                <div className="container text-center">
                   <section>
-                    <div class="row">
-                      <div class="col-lg-4 mb-3">
-                        <div class="card h-100 shadow card-img-top">
-                          <div class="card-body">
+                    <div className="row">
+                      <div className="col-lg-4 mb-3">
+                        <div className="card h-100 shadow card-img-top">
+                          <div className="card-body">
                             <img
-                              src={Banner}
+                              src={image}
                               alt={title}
                               style={{ height: "300px", width: "390px" }}
                             />
-                            <h5 class="display-5">
+                            <h5 className="display-5">
                               <b>{title}</b>
                             </h5>
                             <br />
@@ -47,7 +45,7 @@ const CampaignDetail = () => {
                             <br />
                             <h5>{story}</h5>
                             <br />
-                            <h5 class="display-6">
+                            <h5 className="display-6">
                               {" "}
                               <b>
                                 UGX {amount} <small>goal</small>
