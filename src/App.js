@@ -2,22 +2,28 @@ import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import CampaignListing from "./components/CampaignList";
-import CampaignDetails from "./components/CampaignDetail";
-import Header from "./components/Header";
+import Home from "./components/LandingPage/index";
+import CampaignListing from "./components/CampaignListing/index";
+import CampaignDetail from "./components/CampaignDetails/index";
+import Header from "./components/Header/index";
+import Footer from "./components/Footer/index";
 
 function App() {
   return (
     <div className="App">
-      <div className="container bg-white p-4 mt-5">
-        <Router>
-          <Header />
-          <Switch>
-            <Route exact path="/" component={CampaignListing} />
-            <Route exact path="/campaigns/:campaignId" component={CampaignDetails} />
-          </Switch>
-        </Router>
-      </div>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/tuyambe/progress" component={CampaignListing} />
+          <Route
+            exact
+            path="/campaigns/:campaignId"
+            component={CampaignDetail}
+          />
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }

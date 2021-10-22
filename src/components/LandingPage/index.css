@@ -1,0 +1,18 @@
+.btn:hover{
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+.icons:hover{
+    transform: translateY(-4px);
+    cursor: pointer;
+}
+
+.headings{
+    letter-spacing: 0.2rem;
+}

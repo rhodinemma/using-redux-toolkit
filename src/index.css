@@ -4,8 +4,15 @@
   src: local("Barlow"),
     url("./assets/fonts/Barlow/Barlow-Regular.ttf") format("truetype");
 }
+/*@font-face {
+  font-family: "FiraCode";
+  src: local("FiraCode"),
+    url("./assets/fonts/FiraCode/FiraCode-Regular.ttf") format("truetype");
+}*/
+
 * {
   margin: 0;
-  font-size: 20px;
+  font-size: 19px;
   font-family: "Barlow";
+  width: 100%;
 }
